@@ -1,11 +1,21 @@
+
 version: 2
 
 sources:
   - name: insurance_landing
     database: LOGANUMINA
-    schema: insurance_dw_source
+    schema: INSURANCE_DW_SOURCE
     tables:
       - name: agents
       - name: claims
       - name: customers
       - name: policies
+
+  - name: insurance_interactions
+    database: LOGANUMINA
+    schema: insurance_dw_source
+    quoting:
+      schema: true
+      identifier: true
+    tables:
+      - name: customer_service_interactions
