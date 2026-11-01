@@ -15,3 +15,7 @@ models:
     description: "Oliver Sales Fact"
   - name: sales
     description: "Oliver Sales Semantic Layer"
+  - name: stg_employee_certifications
+    description: "certifications from employees"
+  - name: fact_certification
+    description: "certifications by date"
