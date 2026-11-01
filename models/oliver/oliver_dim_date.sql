@@ -4,11 +4,16 @@
     )
 }}
 
-SELECT DISTINCT
-TO_NUMBER(TO_CHAR(order_date, 'YYYYMMDD')) as date_key,
-order_date as date_id,
-DAYNAME(order_date) as dayofweek,
-MONTH(order_date) as month,
-QUARTER(order_date) as quarter,
-YEAR(order_date) as year
-FROM {{ source('oliver', 'orders') }}
+with cte_date as (
+    {{ dbt_date.get_date_dimension("1990-01-01", "2050-12-31") }}
+)
+
+select
+    date_day as date_key,
+    date_day,
+    day_of_week,
+    month_of_year,
+    month_name,
+    quarter_of_year,
+    year_number
+from cte_date
