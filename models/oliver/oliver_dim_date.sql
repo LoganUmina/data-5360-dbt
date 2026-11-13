@@ -10,6 +10,7 @@ with cte_date as (
 
 select
     date_day as date_key,
+    date_day as date_id,
     date_day,
     day_of_week,
     month_of_year,
